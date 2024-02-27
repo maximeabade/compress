@@ -1,7 +1,7 @@
 {- |
   Module      : LZ.LZ78
   Description : An implementation of LZ78 method
-  Maintainer  : ???
+  Maintainer  : MAX
 -}
 module LZ.LZ78(compress, uncompress) where
 findPrefix :: String -> [String] -> Maybe Int
