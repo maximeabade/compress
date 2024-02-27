@@ -1,13 +1,13 @@
 FINIR LZ - MAXIME
 
 STATISTIC _______
-                |__ HUFFMAN ----------WHO
+                |__ HUFFMAN ----------Capdeville
                 |
-                |__ SHANNON-FANO -----WHO
+                |__ SHANNON-FANO -----Capdeville
                 |
-                |__ SOURCE -----------WHO
+                |__ SOURCE -----------Gustave
                 |
-                |__ ENCODING TREE ----WHO
+                |__ ENCODING TREE ----Ugo
 
 RLE ---------------------------------- Raph
 
