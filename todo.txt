@@ -1,6 +1,6 @@
 FINIR LZ - MAXIME
 
-STATISTIC ------|
+STATISTIC _______
                 |__ HUFFMAN ----------WHO
                 |
                 |__ SHANNON-FANO -----WHO
