@@ -9,4 +9,5 @@ import Statistic.EncodingTree
 
 -- | Huffman tree generation
 tree :: Ord a => [a] -> Maybe (EncodingTree a)
-tree _ = undefined -- TODO
+tree _ = undefined -- TOD
+
