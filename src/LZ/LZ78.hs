@@ -3,7 +3,9 @@
   Description : An implementation of LZ78 method
   Maintainer  : MAX
 -}
+
 module LZ.LZ78(compress, uncompress) where
+
 findPrefix :: String -> [String] -> Maybe Int
 findPrefix prefix dictionary = findPrefix' prefix dictionary 0
 
@@ -28,7 +30,7 @@ compress' :: [String] -> String -> String -> [(Int, Char)]
 compress' _ _ [] = []  -- Fin de la chaîne d'entrée
 compress' dictionary currentPrefix (x:xs) =
   case findPrefix (currentPrefix ++ [x]) dictionary of
-    Just index -> compress' dictionary (currentPrefix ++ [x]) xs
+    Just index -> compress' dictionary (currentPrefix ++ [x]) xs 
     Nothing    -> (maybe 0 id (findPrefix currentPrefix dictionary), x) : compress' (dictionary ++ [currentPrefix ++ [x]]) [] xs
 
 
