@@ -10,6 +10,24 @@ Lors de la complétion d'une tâche, la déplacer dans ``` done.txt ```, en pré
 
 ## AVANT DE PUSH
 On fait un pull, on bosse chacun sur une méthode différente à chaque fois, on n'écrase pas le travail des autres, sinon c'est la merde!
+Donc ça donne ceci : 
+- On pull
+```
+git pull
+```
+- On ajoute son travail
+```
+git add .
+```
+- On commit
+```
+git commit -m "Message de commit"
+```
+- On push
+```
+git push
+```
+
 
 ## IMPORTS QUALIFIÉS    
 Pensez à gérer vos imports qualifiés pour éviter les conflits de nommage, nottamment sur les méthodes compress et uncompress.
