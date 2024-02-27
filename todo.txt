@@ -1,0 +1,13 @@
+FINIR LZ - MAXIME
+
+STATISTIC ------|
+                |__ HUFFMAN ----------WHO
+                |
+                |__ SHANNON-FANO -----WHO
+                |
+                |__ SOURCE -----------WHO
+                |
+                |__ ENCODING TREE ----WHO
+
+RLE ----------------------------------WHO
+
