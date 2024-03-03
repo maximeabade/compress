@@ -46,12 +46,12 @@ getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: 
 
 
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
-bindir     = "/home/max/Bureau/Work/ECOLE/ING2-EISTI/Semestre4/Programmation_fonctionnelle/Max/Cours/Project/compress/.stack-work/install/x86_64-linux-tinfo6/694b59816c43e7f390735c65763ca64f980b7a96783842323a01fc6ea852e75a/9.6.4/bin"
-libdir     = "/home/max/Bureau/Work/ECOLE/ING2-EISTI/Semestre4/Programmation_fonctionnelle/Max/Cours/Project/compress/.stack-work/install/x86_64-linux-tinfo6/694b59816c43e7f390735c65763ca64f980b7a96783842323a01fc6ea852e75a/9.6.4/lib/x86_64-linux-ghc-9.6.4/compress-0.1.0.0-3OvsreSP05Q70yje1Lhasf"
-dynlibdir  = "/home/max/Bureau/Work/ECOLE/ING2-EISTI/Semestre4/Programmation_fonctionnelle/Max/Cours/Project/compress/.stack-work/install/x86_64-linux-tinfo6/694b59816c43e7f390735c65763ca64f980b7a96783842323a01fc6ea852e75a/9.6.4/lib/x86_64-linux-ghc-9.6.4"
-datadir    = "/home/max/Bureau/Work/ECOLE/ING2-EISTI/Semestre4/Programmation_fonctionnelle/Max/Cours/Project/compress/.stack-work/install/x86_64-linux-tinfo6/694b59816c43e7f390735c65763ca64f980b7a96783842323a01fc6ea852e75a/9.6.4/share/x86_64-linux-ghc-9.6.4/compress-0.1.0.0"
-libexecdir = "/home/max/Bureau/Work/ECOLE/ING2-EISTI/Semestre4/Programmation_fonctionnelle/Max/Cours/Project/compress/.stack-work/install/x86_64-linux-tinfo6/694b59816c43e7f390735c65763ca64f980b7a96783842323a01fc6ea852e75a/9.6.4/libexec/x86_64-linux-ghc-9.6.4/compress-0.1.0.0"
-sysconfdir = "/home/max/Bureau/Work/ECOLE/ING2-EISTI/Semestre4/Programmation_fonctionnelle/Max/Cours/Project/compress/.stack-work/install/x86_64-linux-tinfo6/694b59816c43e7f390735c65763ca64f980b7a96783842323a01fc6ea852e75a/9.6.4/etc"
+bindir     = "/home/max/Bureau/Work/compress/.stack-work/install/x86_64-linux-tinfo6/a476bebc6d17c061ef713e62ba337983d9b60e643237ae98b03e4d1487502446/9.6.4/bin"
+libdir     = "/home/max/Bureau/Work/compress/.stack-work/install/x86_64-linux-tinfo6/a476bebc6d17c061ef713e62ba337983d9b60e643237ae98b03e4d1487502446/9.6.4/lib/x86_64-linux-ghc-9.6.4/compress-0.1.0.0-3OvsreSP05Q70yje1Lhasf"
+dynlibdir  = "/home/max/Bureau/Work/compress/.stack-work/install/x86_64-linux-tinfo6/a476bebc6d17c061ef713e62ba337983d9b60e643237ae98b03e4d1487502446/9.6.4/lib/x86_64-linux-ghc-9.6.4"
+datadir    = "/home/max/Bureau/Work/compress/.stack-work/install/x86_64-linux-tinfo6/a476bebc6d17c061ef713e62ba337983d9b60e643237ae98b03e4d1487502446/9.6.4/share/x86_64-linux-ghc-9.6.4/compress-0.1.0.0"
+libexecdir = "/home/max/Bureau/Work/compress/.stack-work/install/x86_64-linux-tinfo6/a476bebc6d17c061ef713e62ba337983d9b60e643237ae98b03e4d1487502446/9.6.4/libexec/x86_64-linux-ghc-9.6.4/compress-0.1.0.0"
+sysconfdir = "/home/max/Bureau/Work/compress/.stack-work/install/x86_64-linux-tinfo6/a476bebc6d17c061ef713e62ba337983d9b60e643237ae98b03e4d1487502446/9.6.4/etc"
 
 getBinDir     = catchIO (getEnv "compress_bindir")     (\_ -> return bindir)
 getLibDir     = catchIO (getEnv "compress_libdir")     (\_ -> return libdir)
