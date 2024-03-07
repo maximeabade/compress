@@ -13,6 +13,7 @@ import Statistic.Source
 
 -- | Function to calculate the Shannon-Fano encoding tree
 tree :: Ord a => [a] -> Maybe (EncodingTree a)
+tree [] = Nothing
 tree symbols = buildTree (sortOn snd lst)
   where
     lst = orderedCounts symbols
