@@ -6,8 +6,11 @@
 module Statistic.Huffman(tree) where
 
 import Statistic.EncodingTree
+
 -- Autotiser???
 import Data.List (sortOn)
+-- Autotiser???
+import Statistic.Source
 
 
 {-
@@ -17,17 +20,17 @@ import Data.List (sortOn)
 data PriorityQueueNode a = PriorityQueueNode Int (EncodingTree a)
   deriving (Eq, Show)
 
--- C'est quoi liste de a
 
--- | Huffman tree generation
+-- | Huffman tree generatio n
 -- Parameter : List of something
 -- Return HUffman Tree 
 tree :: Ord a => [a] -> Maybe (EncodingTree a)
-tree [] = Nothing -- TODO
-tree [(symbol, occ)] = buildHuffmanTree priorityQueuList
+tree [] = Nothing
+tree symbols = buildHuffmanTree priorityQueueList
   where
-
-    priorityQueuList = buildPriorityQueue lst
+    -- Transformation de txt en list : [(a, Int)] 
+    lst = orderedCounts symbols
+    priorityQueueList = buildPriorityQueue lst
 
 
 {- 
@@ -38,7 +41,6 @@ tree [(symbol, occ)] = buildHuffmanTree priorityQueuList
 mergeNodes :: PriorityQueueNode a -> PriorityQueueNode a -> PriorityQueueNode a
 mergeNodes (PriorityQueueNode freq1 tree1) (PriorityQueueNode freq2 tree2) =
   PriorityQueueNode (freq1 + freq2) (EncodingNode (freq1 + freq2) tree1 tree2)
-
 
 {- 
 -- | Transform the original [Symbol, Occurence] list into a PriotityQueuNode's list  
@@ -54,7 +56,6 @@ buildPriorityQueue = map (\(x, f) -> PriorityQueueNode f (EncodingLeaf f x)) . s
 -- | Generate the Huffman Tree by add each lowest PriorityQueuNode frequency 
 -- Parameter : PriorityQueuNode list
 -- Return : Huffman Tree
-
 -}
 buildHuffmanTree :: Ord a => [PriorityQueueNode a] -> Maybe (EncodingTree a)
 buildHuffmanTree [node] = Just $ case node of  -- handle last element, tree is done  
