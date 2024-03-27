@@ -14,5 +14,7 @@ compress = map(\a -> (head a, length a)) . List.group
 
 -- | RLE uncompress method
 -- If input cannot be uncompressed, returns `Nothing`
-uncompress :: [(a, Int)] -> Maybe [a] OR Nothing
-uncompress = concatMap(\(a, n) -> if (n > 0) then replicate n a else Nothing)
+uncompress :: [(a, Int)] -> Maybe [a]
+uncompress xs
+  | all (\(_, n) -> n > 0) xs = Just $ concatMap (\(a, n) -> replicate n a) xs
+  | otherwise = Nothing
