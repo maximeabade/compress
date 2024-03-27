@@ -1,7 +1,6 @@
 module LZ.LZ78(compress, uncompress) where
 
 import Data.List (findIndex, isPrefixOf)
-
 -- | LZ78 compress method
 compress :: String -> [(Int, Char)]
 compress = compress' []
