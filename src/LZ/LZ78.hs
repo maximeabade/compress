@@ -26,17 +26,14 @@ compress' = reverse . third . P.foldl step (singleton "" 0, "", [])
             else (insert pat' (size dict) dict, "", (dict ! pat, char):log)
     third (_, _, log) = log
 
-
-
 uncompress :: [(Int, Char)] -> String
 uncompress [] = ""
-uncompress codes = helper [] codes
+uncompress codes = helper M.empty codes
   where
     helper _ [] = ""
     helper dict ((index, char):rest) =
-      let entry = case index of
-                    0 -> [char]
-                    _ -> let (prefix, _) = dict !! (index - 1)
-                         in prefix ++ [char]
-          newDict = dict ++ [(entry ++ [char], length dict + 1)]
+      let entry = case M.lookup index dict of
+                    Just prefix -> prefix ++ [char]
+                    Nothing -> [char]
+          newDict = M.insert (M.size dict + 1) (entry) dict
       in entry ++ helper newDict rest
