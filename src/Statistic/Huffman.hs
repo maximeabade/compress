@@ -7,9 +7,8 @@ module Statistic.Huffman(tree) where
 
 import Statistic.EncodingTree
 
--- Autotiser???
+
 import Data.List (sortOn)
--- Autotiser???
 import Statistic.Source
 
 
