@@ -1,6 +1,7 @@
 module LZ.LZW(compress, uncompress) where
 import Data.Char (chr)
 import Data.List (isPrefixOf)
+import LZ.Dictionaries (empty, ascii, zeroAsChar)
 
 -- | Fonction de compression LZW
 compress :: String -> [Int]
@@ -34,5 +35,24 @@ findLongestPrefix str dict = go str ""
 
 -- | LZW uncompress method
 -- Si l'entrée ne peut pas être décompressée, retourne `Nothing`
+
+
+-- Convertir le dictionnaire ascii en [(Int, [Char])]
+asciiDict :: [(Int, [Char])]
+asciiDict = zip [0..255] (map return ['\0'..'\xFF'])
+
+-- Si l'entrée ne peut pas être décompressée, retourne `Nothing`
 uncompress :: [Int] -> Maybe String
-uncompress _ = undefined -- TODO
+uncompress [] = Just ""
+uncompress code = go code asciiDict ""  -- Utilisez `asciiDict` comme dictionnaire
+  where
+    go [] _ output = Just output
+    go (codeNr:rest) dict output =
+      case lookup codeNr dict of
+        Just phrase -> go rest dict (output ++ phrase)
+        Nothing ->
+          case lookup (head rest) dict of
+            Just nextPhrase ->
+              let newEntry = (length dict, output ++ [head nextPhrase])
+              in go rest (newEntry : dict) (output ++ [head nextPhrase])
+            Nothing -> Nothing
