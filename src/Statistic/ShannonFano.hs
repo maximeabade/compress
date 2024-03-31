@@ -16,8 +16,7 @@ tree :: Ord a => [a] -> Maybe (EncodingTree a)
 tree [] = Nothing
 tree symbols = buildTree (sortOn snd lst)
   where
-    lst = orderedCounts symbols
-
+    lst = orderedCounts (map (\x -> (x, 1)) symbols)
 -- Helper function to build the Shannon-Fano encoding tree
 buildTree :: Ord a => [(a, Int)] -> Maybe (EncodingTree a)
 buildTree [] = Nothing
